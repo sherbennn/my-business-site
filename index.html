@@ -3,45 +3,195 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Business Name | What You Do</title>
-  <meta name="description" content="One sentence describing your business.">
+  <title>Taluloot | Fresh Flowers &amp; Gifts</title>
+  <meta name="description" content="Fresh flowers and thoughtful gifts for every occasion, delivered with love.">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="top">
 
-  <header>
-    <h1>Your Business Name</h1>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <div class="announce">
+    💖 Order by 5PM for same-day delivery · <span id="countdown"></span>
+  </div>
+
+  <header class="site-header">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <a class="logo" href="#top">Taluloot</a>
+    <input class="search" id="searchInput" type="search" placeholder="Search flowers &amp; gifts">
+    <button class="cart-btn" aria-label="Cart">🛍 <span id="cartCount">0</span></button>
   </header>
 
+  <nav class="main-nav" id="mainNav">
+    <a href="#products">Birthday</a>
+    <a href="#products">Anniversary</a>
+    <a href="#products">Graduation</a>
+    <a href="#products">Get Well</a>
+    <a href="#products">Condolence</a>
+    <a href="#categories">Gifts</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <section class="hero">
-    <h2>A clear headline about what you offer</h2>
-    <p>One short line explaining who it's for and why it's great.</p>
-    <a class="button" href="#contact">Get in touch</a>
+    <div class="hero-text">
+      <p class="eyebrow">Fresh blooms · Made with love</p>
+      <h1>Flowers that say what words can't</h1>
+      <p>Beautiful bouquets and gifts for birthdays, anniversaries, and every moment in between.</p>
+      <a class="btn" href="#products">Shop now</a>
+    </div>
   </section>
 
-  <section id="services">
-    <h2>Services</h2>
-    <p>List what you sell or do here.</p>
+  <section class="finder">
+    <h2>🌸 Quick Gift Finder</h2>
+    <div class="finder-row">
+      <select id="occasionSelect">
+        <option value="all">All occasions</option>
+        <option value="birthday">Birthday</option>
+        <option value="anniversary">Anniversary</option>
+        <option value="graduation">Graduation</option>
+        <option value="get-well">Get Well</option>
+        <option value="condolence">Condolence</option>
+      </select>
+      <select id="budgetSelect">
+        <option value="0-999999">Any budget</option>
+        <option value="0-1500">Below ₱1,500</option>
+        <option value="1500-3000">₱1,500 – ₱3,000</option>
+        <option value="3000-999999">Above ₱3,000</option>
+      </select>
+      <button class="btn" id="findBtn">Find gifts</button>
+    </div>
   </section>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Tell your story in a few sentences.</p>
+  <section class="section" id="categories">
+    <h2>Shop by category</h2>
+    <div class="cat-grid">
+      <a class="cat" href="#products"><span>💐</span>Bouquets</a>
+      <a class="cat" href="#products"><span>🎁</span>Gift Boxes</a>
+      <a class="cat" href="#products"><span>🎂</span>Cakes</a>
+      <a class="cat" href="#products"><span>🌷</span>Tulips</a>
+      <a class="cat" href="#products"><span>🍫</span>Chocolates</a>
+      <a class="cat" href="#products"><span>🪴</span>Plants</a>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: you@yourbusiness.com</p>
+  <section class="section alt" id="products">
+    <h2>Popular this week</h2>
+    <p class="note" id="noResults" hidden>No matches found. Try a different occasion or budget.</p>
+    <div class="product-grid" id="productGrid">
+
+      <article class="card" data-name="Blush Romance" data-occasion="anniversary" data-price="2399">
+        <div class="card-img">🌹</div>
+        <h3>Blush Romance</h3>
+        <p class="price">₱2,399</p>
+        <button class="btn small add-btn">Add to cart</button>
+      </article>
+
+      <article class="card" data-name="Cotton Candy" data-occasion="birthday" data-price="1799">
+        <div class="card-img">🌸</div>
+        <h3>Cotton Candy</h3>
+        <p class="price">₱1,799</p>
+        <button class="btn small add-btn">Add to cart</button>
+      </article>
+
+      <article class="card" data-name="Sunny Day" data-occasion="get-well" data-price="1299">
+        <div class="card-img">🌻</div>
+        <h3>Sunny Day</h3>
+        <p class="price">₱1,299</p>
+        <button class="btn small add-btn">Add to cart</button>
+      </article>
+
+      <article class="card" data-name="Tulip Dream" data-occasion="birthday" data-price="1999">
+        <div class="card-img">🌷</div>
+        <h3>Tulip Dream</h3>
+        <p class="price">₱1,999</p>
+        <button class="btn small add-btn">Add to cart</button>
+      </article>
+
+      <article class="card" data-name="Grad Bloom" data-occasion="graduation" data-price="1499">
+        <div class="card-img">🎓</div>
+        <h3>Grad Bloom</h3>
+        <p class="price">₱1,499</p>
+        <button class="btn small add-btn">Add to cart</button>
+      </article>
+
+      <article class="card" data-name="Gentle Peace" data-occasion="condolence" data-price="3499">
+        <div class="card-img">🕊️</div>
+        <h3>Gentle Peace</h3>
+        <p class="price">₱3,499</p>
+        <button class="btn small add-btn">Add to cart</button>
+      </article>
+
+      <article class="card" data-name="Petite Posy" data-occasion="birthday" data-price="899">
+        <div class="card-img">💐</div>
+        <h3>Petite Posy</h3>
+        <p class="price">₱899</p>
+        <button class="btn small add-btn">Add to cart</button>
+      </article>
+
+      <article class="card" data-name="Luxe Rose Box" data-occasion="anniversary" data-price="4999">
+        <div class="card-img">🎁</div>
+        <h3>Luxe Rose Box</h3>
+        <p class="price">₱4,999</p>
+        <button class="btn small add-btn">Add to cart</button>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Why choose Taluloot</h2>
+    <div class="why-grid">
+      <div class="why"><span>🚚</span><h3>Same-day delivery</h3><p>Order before the daily cutoff.</p></div>
+      <div class="why"><span>🌿</span><h3>Fresh flowers</h3><p>Chosen and arranged with care.</p></div>
+      <div class="why"><span>🎀</span><h3>Made with love</h3><p>Every order is hand-arranged.</p></div>
+      <div class="why"><span>💳</span><h3>Easy ordering</h3><p>Simple checkout and payment.</p></div>
+    </div>
+  </section>
+
+  <section class="section alt" id="reviews">
+    <h2>What customers say</h2>
+    <div class="review-grid">
+      <blockquote>"Replace this with a real customer review."Customer name</blockquote>
+      <blockquote>"Replace this with a real customer review."Customer name</blockquote>
+      <blockquote>"Replace this with a real customer review."Customer name</blockquote>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>How does delivery work?</summary>
+        <p>Write your delivery areas, time slots, and cutoff time here.</p>
+      </details>
+      <details>
+        <summary>What payment methods do you accept?</summary>
+        <p>List your payment options here (GCash, Maya, bank transfer, cards).</p>
+      </details>
+      <details>
+        <summary>Can I add a personal message card?</summary>
+        <p>Explain how customers can include a message with their order.</p>
+      </details>
+      <details>
+        <summary>Which areas do you deliver to?</summary>
+        <p>List the cities or areas you cover.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section alt contact" id="contact">
+    <h2>Get in touch</h2>
+    <p>Email: you@yourbusiness.com · Phone: 09XX XXX XXXX</p>
+    <p>Facebook · Instagram · Messenger (add your links)</p>
+    <form class="subscribe" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+      <input type="email" placeholder="Your email for news &amp; offers" required>
+      <button class="btn" type="submit">Subscribe</button>
+    </form>
   </section>
 
   <footer>
-    <p>&copy; 2026 Your Business Name</p>
+    <p>&copy; 2026 Taluloot. All rights reserved.</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
